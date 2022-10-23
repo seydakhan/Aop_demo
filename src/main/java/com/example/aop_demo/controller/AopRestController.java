@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AopRestController {
 
     @GetMapping({"/{name}/{surname}/{age}", "/"})
-    @LogParameters
+    @LogParameters(params = {"name", "age"})
     public ResponseEntity<String> helloAop(@PathVariable(name = "name", required = false) String name,
                                            @PathVariable(name = "surname", required = false) String surname,
                                            @PathVariable(name = "age", required = false) String age){
